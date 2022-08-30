@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Algorithm
 {
-    public class BubleSorth<T> : AlgorithBase<T> where T : IComparable
+    public class BubleSort<T> : AlgorithmBase<T> where T : IComparable
     {
-        public BubleSorth(IEnumerable<T> items) : base(items)
+        public BubleSort(IEnumerable<T> items) : base(items)
         {
 
         }

@@ -32,7 +32,7 @@ namespace Algorithm.Tests
         public void BaseSort()
         {
             //arrange
-            var sort = new AlgorithBase<int>(Items);
+            var sort = new AlgorithmBase<int>(Items);
 
             //act
             sort.Sort();
@@ -49,7 +49,7 @@ namespace Algorithm.Tests
         public void BubleSort()
         {
             //arrange
-            var sort = new BubleSorth<int>(Items);
+            var sort = new BubleSort<int>(Items);
 
             //act
             sort.Sort();
@@ -67,6 +67,23 @@ namespace Algorithm.Tests
         {
             //arrange
             var sort = new CoctailSort<int>(Items);
+
+            //act
+            sort.Sort();
+
+            //assert
+
+            for (int i = 0; i < sort.Items.Count; i++)
+            {
+                Assert.AreEqual(sort.Items[i], SortedItems[i]);
+            }
+        }
+
+        [TestMethod()]
+        public void InsertSort()
+        {
+            //arrange
+            var sort = new InsertSort<int>(Items);
 
             //act
             sort.Sort();

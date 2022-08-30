@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Algorithm
 {
-    public class CoctailSort<T> : AlgorithBase<T> where T : IComparable
+    public class CoctailSort<T> : AlgorithmBase<T> where T : IComparable
     {
         public CoctailSort(IEnumerable<T> items) : base(items)
         {

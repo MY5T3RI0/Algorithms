@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Algorithm
 {
-    public class AlgorithBase<T> where T : IComparable
+    public class AlgorithmBase<T> where T : IComparable
     {
         public List<T> Items { get; set; }
         public int CompareCount { get; set; }
         public int SwopCount { get; set; }
         public int Count => Items.Count;
 
-        public AlgorithBase(IEnumerable<T> items)
+        public AlgorithmBase(IEnumerable<T> items)
         {
             Items = new List<T>();
             Items.AddRange(items);
