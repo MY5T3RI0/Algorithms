@@ -13,6 +13,13 @@ namespace Algorithm
         public int SwopCount { get; set; }
         public int Count => Items.Count;
 
+        public AlgorithmBase()
+        {
+            Items = new List<T>();
+            CompareCount = 0;
+            SwopCount = 0;
+        }
+
         public AlgorithmBase(IEnumerable<T> items)
         {
             Items = new List<T>();
