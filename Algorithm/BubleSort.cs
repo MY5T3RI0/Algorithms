@@ -13,6 +13,11 @@ namespace Algorithm
 
         }
 
+        public BubleSort() : base()
+        {
+
+        }
+
         public override void Sort()
         {
             for (int i = 0; i < Count - 1; i++)
@@ -30,6 +35,11 @@ namespace Algorithm
                     break;
                 }
             }
-        }       
+        }
+
+        public override string ToString()
+        {
+            return "Сортировка пузырьком";
+        }
     }
 }

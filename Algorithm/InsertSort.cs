@@ -13,6 +13,11 @@ namespace Algorithm
 
         }
 
+        public InsertSort() : base()
+        {
+
+        }
+
         public override void Sort()
         {
             for (int i = 1; i < Count; i++)
@@ -24,6 +29,11 @@ namespace Algorithm
                     j--;
                 }
             }
+        }
+
+        public override string ToString()
+        {
+            return "Сортировка вставками";
         }
     }
 }

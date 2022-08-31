@@ -13,6 +13,11 @@ namespace Algorithm
 
         }
 
+        public CoctailSort() : base()
+        {
+
+        }
+
         public override void Sort()
         {
             for (int i = 0; i < Count/2; i++)
@@ -42,6 +47,11 @@ namespace Algorithm
                     break;
                 }
             }
+        }
+
+        public override string ToString()
+        {
+            return "Шейкерная сортировка";
         }
     }
 }

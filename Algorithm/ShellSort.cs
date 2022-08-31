@@ -13,6 +13,11 @@ namespace Algorithm
 
         }
 
+        public ShellSort() : base()
+        {
+
+        }
+
         public override void Sort()
         {
             var step = Count / 2;
@@ -29,6 +34,11 @@ namespace Algorithm
                 }
                 step /= 2;
             }
+        }
+
+        public override string ToString()
+        {
+            return "Сортировка шелла";
         }
     }
 }

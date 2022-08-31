@@ -13,6 +13,10 @@ namespace Algorithm
         public int SwopCount { get; set; }
         public int Count => Items.Count;
 
+        public event EventHandler<Tuple<T, T>> CompareEvent;
+
+        public event EventHandler<Tuple<T, T>> SwopEvent;
+
         public AlgorithmBase()
         {
             Items = new List<T>();
@@ -36,21 +40,29 @@ namespace Algorithm
         public int Compare(int index1, int index2)
         {
             CompareCount++;
+            var result = 0;
             switch (Items[index1].CompareTo(Items[index2]))
             {
                 case -1:
-                    return -1;
+                    result =  -1;
+                    break;
 
                 case 1:
-                    return 1;
+                    result = 1;
+                    break;
 
                 default:
-                    return 0;
+                    result = 0;
+                    break;
             }
+
+            CompareEvent?.Invoke(this, new Tuple<T, T>(Items[index1], Items[index2]));
+            return result;
         }
 
         public void Swop(int index1, int index2)
         {
+            SwopEvent?.Invoke(this, new Tuple<T, T>(Items[index1], Items[index2]));
             var temp = Items[index1];
             Items[index1] = Items[index2];
             Items[index2] = temp;
