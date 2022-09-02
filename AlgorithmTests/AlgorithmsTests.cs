@@ -23,7 +23,7 @@ namespace Algorithm.Tests
         {
             for (int i = 0; i < 10000; i++)
             {
-                Items.Add(rnd.Next(100));
+                Items.Add(rnd.Next(1000));
             }
             SortedItems.AddRange(Items);
             SortedItems.Sort();
@@ -170,6 +170,23 @@ namespace Algorithm.Tests
         {
             //arrange
             var sort = new GnomeSort<int>(Items);
+
+            //act
+            sort.Sort();
+
+            //assert
+
+            for (int i = 0; i < sort.Items.Count; i++)
+            {
+                Assert.AreEqual(SortedItems[i], sort.Items[i]);
+            }
+        }
+
+        [TestMethod()]
+        public void LsdRedixSort()
+        {
+            //arrange
+            var sort = new LsdRedixSort<int>(Items);
 
             //act
             sort.Sort();
