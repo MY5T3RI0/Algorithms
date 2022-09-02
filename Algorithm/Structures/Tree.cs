@@ -4,19 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BinaryTree.Model
+namespace Algorithm.Structures
 {
     /// <summary>
     /// Бинарное дерево.
     /// </summary>
     /// <typeparam name="T">Тип хранимых в узле данных.</typeparam>
-    public class Tree<T>
+    public class Tree<T> : AlgorithmBase<T>
         where T : IComparable
     {
         /// <summary>
         /// Корневой узел.
         /// </summary>
         public Node<T> Root { get; set; }
+
+        public Tree(IEnumerable<T> items)
+        {
+            foreach (var item in items)
+            {
+                Add(item);
+            }
+        }
 
         /// <summary>
         /// Добавить узел.
@@ -38,91 +46,17 @@ namespace BinaryTree.Model
         }
 
         /// <summary>
-        /// Префиксный обход.
-        /// </summary>
-        /// <returns>Список элементов дерева.</returns>
-        public List<T> PreOrder()
-        {
-            if (Root != null)
-            {
-                var result = new List<T>();
-                return PreOrder(Root, result);
-            }
-            return default;
-        }
-
-        /// <summary>
-        /// Префиксный обход.
-        /// </summary>
-        /// <param name="node">Корневой узел.</param>
-        /// <param name="result">Список элементов дерева.</param>
-        /// <returns>Список элементов дерева.</returns>
-        private List<T> PreOrder(Node<T> node, List<T> result)
-        {
-            result.Add(node.Data);
-
-            if (node.Left != null)
-            {
-                PreOrder(node.Left, result);
-            }
-
-            if (node.Right != null)
-            {
-                PreOrder(node.Right, result);
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Постфиксный обход.
-        /// </summary>
-        /// <returns>Список элементов дерева.</returns>
-        public List<T> PostOrder()
-        {
-            if (Root != null)
-            {
-                var result = new List<T>();
-                return PostOrder(Root, result);
-            }
-            return default;
-        }
-
-        /// <summary>
-        /// Постфиксный обход.
-        /// </summary>
-        /// <param name="node">Корневой узел</param>
-        /// <param name="result">Список элементов дерева.</param>
-        /// <returns>Список элементов дерева.</returns>
-        private List<T> PostOrder(Node<T> node, List<T> result)
-        {
-            if (node.Left != null)
-            {
-                PostOrder(node.Left, result);
-            }
-
-            if (node.Right != null)
-            {
-                PostOrder(node.Right, result);
-            }
-
-            result.Add(node.Data);
-
-            return result;
-        }
-
-        /// <summary>
         /// Инфиксный обход.
         /// </summary>
         /// <returns>Список элементов дерева.</returns>
-        public List<T> InOrder()
+        public void InOrder()
         {
             if (Root != null)
             {
                 var result = new List<T>();
-                return InOrder(Root, result);
+                Items.AddRange(InOrder(Root, result));
             }
-            return default;
+
         }
 
         /// <summary>

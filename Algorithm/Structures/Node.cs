@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BinaryTree.Model
+namespace Algorithm.Structures
 {
     /// <summary>
     /// Узел.
