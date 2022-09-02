@@ -28,6 +28,7 @@ namespace AlgorithmsView
             SortingComboBox.Items.Add("Вставками");
             SortingComboBox.Items.Add("Шелл");
             SortingComboBox.Items.Add("Куча");
+            SortingComboBox.Items.Add("Выбором");
 
             Items = new List<SortedItem>();
         }
@@ -104,6 +105,10 @@ namespace AlgorithmsView
                         break;
                     case 4:
                         algorithm = new HeapSort<SortedItem>(Items);
+                        Sort(algorithm);
+                        break;
+                    case 5:
+                        algorithm = new SelectionSort<SortedItem>(Items);
                         Sort(algorithm);
                         break;
                     default:
