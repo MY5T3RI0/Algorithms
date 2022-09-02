@@ -40,8 +40,10 @@
             this.SwopLabel = new System.Windows.Forms.Label();
             this.InfoPanel = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.SettingsPanel.SuspendLayout();
             this.InfoPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // SettingsPanel
@@ -107,7 +109,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SortingPanel.Location = new System.Drawing.Point(196, 4);
             this.SortingPanel.Name = "SortingPanel";
-            this.SortingPanel.Size = new System.Drawing.Size(624, 434);
+            this.SortingPanel.Size = new System.Drawing.Size(1701, 434);
             this.SortingPanel.TabIndex = 1;
             // 
             // NameLabel
@@ -149,27 +151,40 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(4, 258);
+            this.textBox1.Location = new System.Drawing.Point(55, 258);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 180);
+            this.textBox1.Size = new System.Drawing.Size(135, 180);
             this.textBox1.TabIndex = 3;
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(4, 258);
+            this.trackBar1.Maximum = 100;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar1.Size = new System.Drawing.Size(45, 180);
+            this.trackBar1.TabIndex = 0;
+            this.trackBar1.Value = 10;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 450);
+            this.ClientSize = new System.Drawing.Size(1904, 450);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.InfoPanel);
             this.Controls.Add(this.SortingPanel);
             this.Controls.Add(this.SettingsPanel);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.SettingsPanel.ResumeLayout(false);
             this.SettingsPanel.PerformLayout();
             this.InfoPanel.ResumeLayout(false);
             this.InfoPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,6 +204,7 @@
         private System.Windows.Forms.Label SwopLabel;
         private System.Windows.Forms.Panel InfoPanel;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TrackBar trackBar1;
     }
 }
 

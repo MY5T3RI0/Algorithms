@@ -8,7 +8,7 @@ namespace Algorithm
 {
     public class AlgorithmBase<T> where T : IComparable
     {
-        public List<T> Items { get; set; }
+        public List<T> Items { get; set; } = new List<T>();
         public int CompareCount { get; set; }
         public int SwopCount { get; set; }
         public int Count => Items.Count;
@@ -19,17 +19,11 @@ namespace Algorithm
 
         public AlgorithmBase()
         {
-            Items = new List<T>();
-            CompareCount = 0;
-            SwopCount = 0;
         }
 
         public AlgorithmBase(IEnumerable<T> items)
         {
-            Items = new List<T>();
             Items.AddRange(items);
-            CompareCount = 0;
-            SwopCount = 0;
         }
 
         public virtual void Sort()

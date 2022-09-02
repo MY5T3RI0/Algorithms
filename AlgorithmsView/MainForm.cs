@@ -1,4 +1,5 @@
 ﻿using Algorithm;
+using Algorithm.Structures;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,27 +27,24 @@ namespace AlgorithmsView
             SortingComboBox.Items.Add("Шейкерная");
             SortingComboBox.Items.Add("Вставками");
             SortingComboBox.Items.Add("Шелл");
+            SortingComboBox.Items.Add("Куча");
 
             Items = new List<SortedItem>();
         }
 
         private void GenerateButton_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(SizeTextBox.Text, out int Size))
+            if (!int.TryParse(SizeTextBox.Text, out int Size)) { Size = trackBar1.Value; }
+            textBox1.Text = "";
+            Items.Clear();
+            for (int i = 0; i < Size; i++)
             {
-                textBox1.Text = "";
-                Items.Clear();
-                for (int i = 0; i < Size; i++)
-                {
-                    var value = rnd.Next(100);
-                    var sortedItem = new SortedItem(i + 1, value);
-                    Items.Add(sortedItem);
-                }
-                RefreshItems();
-                SizeTextBox.Text = "";
+                var value = rnd.Next(100);
+                var sortedItem = new SortedItem(i + 1, value);
+                Items.Add(sortedItem);
             }
-            else
-                MessageBox.Show("Укажите колличество");
+            RefreshItems();
+            SizeTextBox.Text = "";
         }
 
         private void DrawItems(List<SortedItem> items)
@@ -104,6 +102,10 @@ namespace AlgorithmsView
                         algorithm = new ShellSort<SortedItem>(Items);
                         Sort(algorithm);
                         break;
+                    case 4:
+                        algorithm = new HeapSort<SortedItem>(Items);
+                        Sort(algorithm);
+                        break;
                     default:
                         algorithm = new BubleSort<SortedItem>(Items);
                         Sort(algorithm);
@@ -117,6 +119,11 @@ namespace AlgorithmsView
 
         private void Sort(AlgorithmBase<SortedItem> algorithm)
         {
+            for (int i = 0; i < algorithm.Items.Count; i++)
+            {
+                algorithm.Items[i].SetPosition(10 * i * 2, 10 * i * 2 + 1);
+            }
+
             algorithm.CompareEvent += Buble_CompareEvent;
             algorithm.SwopEvent += Buble_SwopEvent;
             algorithm.Sort();

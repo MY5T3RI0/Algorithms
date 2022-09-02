@@ -24,7 +24,7 @@ namespace AlgorithmsView
             Number = number;
             StartNumber = number;
             label.AutoSize = true;
-            label.Location = new System.Drawing.Point(10 * Number * 2 + 1, 106);
+            label.Location = new System.Drawing.Point(10 * Number * 2 + 1, 0);
             label.Name = "label" + Number;
             label.Size = new System.Drawing.Size(13, 13);
             label.TabIndex = Number;
@@ -32,9 +32,9 @@ namespace AlgorithmsView
 
             progressBar.ForeColor = Color.Blue;
             progressBar.AccessibleDescription = "";
-            progressBar.Location = new System.Drawing.Point(10 * Number * 2, 9);
+            progressBar.Location = new System.Drawing.Point(10 * Number * 2, 20);
             progressBar.Name = "progressBar" + Number;
-            progressBar.Size = new System.Drawing.Size(22, 86);
+            progressBar.Size = new System.Drawing.Size(22, 400);
             progressBar.Step = 1;
             progressBar.TabIndex = 0;
             progressBar.Value = value;
@@ -48,10 +48,10 @@ namespace AlgorithmsView
 
         public void Refresh()
         {
-            Number = StartNumber;
-            progressBar.Location = new Point(10 * Number * 2, 9);
+            Number = StartNumber; 
+            progressBar.Location = new Point(10 * Number * 2, progressBar.Location.Y);
             progressBar.Name = "progressBar" + Number;
-            label.Location = new Point(10 * Number * 2 + 1, 106);
+            label.Location = new Point(10 * Number * 2 + 1, label.Location.Y);
             label.Name = "label" + Number;
         }
 

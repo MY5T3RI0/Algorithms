@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Algorithm;
+using Algorithm.Structures;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,7 +42,7 @@ namespace Algorithm.Tests
 
             for (int i = 0; i < sort.Items.Count; i++)
             {
-                Assert.AreEqual(sort.Items[i], SortedItems[i]);
+                Assert.AreEqual(SortedItems[i], sort.Items[i]);
             }
         }
 
@@ -58,7 +59,7 @@ namespace Algorithm.Tests
 
             for (int i = 0; i < sort.Items.Count; i++)
             {
-                Assert.AreEqual(sort.Items[i], SortedItems[i]);
+                Assert.AreEqual(SortedItems[i], sort.Items[i]);
             }
         }
 
@@ -75,7 +76,7 @@ namespace Algorithm.Tests
 
             for (int i = 0; i < sort.Items.Count; i++)
             {
-                Assert.AreEqual(sort.Items[i], SortedItems[i]);
+                Assert.AreEqual(SortedItems[i], sort.Items[i]);
             }
         }
 
@@ -92,7 +93,7 @@ namespace Algorithm.Tests
 
             for (int i = 0; i < sort.Items.Count; i++)
             {
-                Assert.AreEqual(sort.Items[i], SortedItems[i]);
+                Assert.AreEqual(SortedItems[i], sort.Items[i]);
             }
         }
 
@@ -109,7 +110,24 @@ namespace Algorithm.Tests
 
             for (int i = 0; i < sort.Items.Count; i++)
             {
-                Assert.AreEqual(sort.Items[i], SortedItems[i]);
+                Assert.AreEqual(SortedItems[i], sort.Items[i]);
+            }
+        }
+
+        [TestMethod()]
+        public void HeapSort()
+        {
+            //arrange
+            var sort = new HeapSort<int>(Items);
+
+            //act
+            sort.Sort();
+
+            //assert
+
+            for (int i = 0; i < sort.Items.Count; i++)
+            {
+                Assert.AreEqual(SortedItems[i], sort.Items[i]);
             }
         }
     }
