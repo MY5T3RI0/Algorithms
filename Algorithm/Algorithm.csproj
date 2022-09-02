@@ -46,6 +46,7 @@
     <Compile Include="GnomeSort.cs" />
     <Compile Include="InsertSort.cs" />
     <Compile Include="LsdRedixSort.cs" />
+    <Compile Include="MsdRedixSort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CoctailSort.cs" />
     <Compile Include="SelectionSort.cs" />
