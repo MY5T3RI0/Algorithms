@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,18 @@ namespace Algorithm
             Items.Sort();
         }
 
+        public TimeSpan TimeSort()
+        {
+            var timer = new Stopwatch();
+            SwopCount = 0;
+
+            timer.Start();
+            Sort();
+            timer.Stop();
+
+            return timer.Elapsed;
+        }
+
         public int Compare(int index1, int index2)
         {
             CompareCount++;
@@ -51,6 +64,29 @@ namespace Algorithm
             }
 
             CompareEvent?.Invoke(this, new Tuple<T, T>(Items[index1], Items[index2]));
+            return result;
+        }
+
+        public int CompareItems(T item1, T item2)
+        {
+            CompareCount++;
+            var result = 0;
+            switch (item1.CompareTo(item2))
+            {
+                case -1:
+                    result = -1;
+                    break;
+
+                case 1:
+                    result = 1;
+                    break;
+
+                default:
+                    result = 0;
+                    break;
+            }
+
+            CompareEvent?.Invoke(this, new Tuple<T, T>(item1, item2));
             return result;
         }
 

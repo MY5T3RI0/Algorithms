@@ -30,6 +30,7 @@ namespace AlgorithmsView
             SortingComboBox.Items.Add("Куча");
             SortingComboBox.Items.Add("Выбором");
             SortingComboBox.Items.Add("Гномья");
+            SortingComboBox.Items.Add("Быстрая");
 
             Items = new List<SortedItem>();
         }
@@ -116,6 +117,10 @@ namespace AlgorithmsView
                         algorithm = new GnomeSort<SortedItem>(Items);
                         Sort(algorithm);
                         break;
+                    case 7:
+                        algorithm = new QuickSort<SortedItem>(Items);
+                        Sort(algorithm);
+                        break;
                     default:
                         algorithm = new BubleSort<SortedItem>(Items);
                         Sort(algorithm);
@@ -136,7 +141,7 @@ namespace AlgorithmsView
 
             algorithm.CompareEvent += Buble_CompareEvent;
             algorithm.SwopEvent += Buble_SwopEvent;
-            algorithm.Sort();
+            TimeLabel.Text = "Время: " + algorithm.TimeSort().ToString();
             SortingPanel.Refresh();
             foreach (var item in algorithm.Items)
             {

@@ -35,7 +35,7 @@
             this.GenerateButton = new System.Windows.Forms.Button();
             this.SizeTextBox = new System.Windows.Forms.TextBox();
             this.SortingPanel = new System.Windows.Forms.Panel();
-            this.NameLabel = new System.Windows.Forms.Label();
+            this.TimeLabel = new System.Windows.Forms.Label();
             this.CompareLabel = new System.Windows.Forms.Label();
             this.SwopLabel = new System.Windows.Forms.Label();
             this.InfoPanel = new System.Windows.Forms.Panel();
@@ -112,14 +112,14 @@
             this.SortingPanel.Size = new System.Drawing.Size(1701, 434);
             this.SortingPanel.TabIndex = 1;
             // 
-            // NameLabel
+            // TimeLabel
             // 
-            this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(8, 20);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(46, 13);
-            this.NameLabel.TabIndex = 2;
-            this.NameLabel.Text = "Время: ";
+            this.TimeLabel.AutoSize = true;
+            this.TimeLabel.Location = new System.Drawing.Point(8, 20);
+            this.TimeLabel.Name = "TimeLabel";
+            this.TimeLabel.Size = new System.Drawing.Size(46, 13);
+            this.TimeLabel.TabIndex = 2;
+            this.TimeLabel.Text = "Время: ";
             // 
             // CompareLabel
             // 
@@ -142,7 +142,7 @@
             // InfoPanel
             // 
             this.InfoPanel.Controls.Add(this.SwopLabel);
-            this.InfoPanel.Controls.Add(this.NameLabel);
+            this.InfoPanel.Controls.Add(this.TimeLabel);
             this.InfoPanel.Controls.Add(this.CompareLabel);
             this.InfoPanel.Location = new System.Drawing.Point(4, 121);
             this.InfoPanel.Name = "InfoPanel";
@@ -199,7 +199,7 @@
         private System.Windows.Forms.TextBox SizeTextBox;
         private System.Windows.Forms.Panel SortingPanel;
         private System.Windows.Forms.ComboBox SortingComboBox;
-        private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.Label TimeLabel;
         private System.Windows.Forms.Label CompareLabel;
         private System.Windows.Forms.Label SwopLabel;
         private System.Windows.Forms.Panel InfoPanel;

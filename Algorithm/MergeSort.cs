@@ -35,8 +35,7 @@ namespace Algorithm
             var left = result.Take(mid).ToList();
             var right = result.Skip(mid).ToList();
 
-            result = Merge(Sorting(left), Sorting(right));
-            return result;
+            return Merge(Sorting(left), Sorting(right));
         }
 
         private List<T> Merge(List<T> left, List<T> right)
