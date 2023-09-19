@@ -40,7 +40,7 @@ namespace Algorithm
         {
             var pointer = left;
 
-            for (int i = left; i <= right; i++)
+            for (int i = left; i < right; i++)
             {
                 if (Compare(i, right) == -1)
                 {
